@@ -100,7 +100,13 @@ controller.menu.onEvent(ControllerButtonEvent.Pressed, function () {
     false
     )
     mySprite.say("PAUSE!")
+    info.setScore(999)
     game.over(true, effects.splatter)
+})
+// This is how you connected if it listen
+controller.player1.onEvent(ControllerEvent.Connected, function () {
+    music.playMelody("C5 B B B G - - - ", 120)
+    music.playMelody("C5 B B B G - - - ", 120)
 })
 let mySprite: Sprite = null
 music.baDing.play()
@@ -131,6 +137,7 @@ mySprite = sprites.create(img`
     ................bbbbbbbbbbbbbbbbb................
     `, SpriteKind.Player)
 mySprite.say("Mity Games")
+info.setLife(1)
 game.onUpdateInterval(500, function () {
 	
 })
